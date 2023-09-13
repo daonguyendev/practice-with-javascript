@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM</title>
+</head>
+<body>
+    <h2>Hello JS DOM</h2>
+
+    <!-- p#fullName{Nguyen Van Teo} -->
+    <p id="fullName">Nguyen Van Teo</p>
+
+    <!-- ul#menu>li.menu-item{HTML}*5 -->
+    <ul id="menu">
+        <li class="menu-item">HTML</li>
+        <li class="menu-item">CSS</li>
+        <li class="menu-item">JS</li>
+        <li class="menu-item">ReactJS</li>
+        <li class="menu-item">NodeJS</li>
+    </ul>
+
+    <script>
+        var pTag = document.getElementById("fullName");
+        document.write("My full name is: " + pTag.innerHTML);
+
+        var liTags = document.getElementsByClassName("menu-item");
+        console.log(liTags);
+
+        var ulTag = document.querySelectorAll("#menu");
+        console.log(ulTag);
+        
+        var liTags2 = document.querySelectorAll(".menu-item");
+        console.log(liTags2);
+
+        document.write(new Date());
+    </script>
+</body>
+</html>

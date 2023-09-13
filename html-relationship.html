@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using JS in HTML</title>
+  </head>
+  <body>
+    <div id="menu">
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+      </ul>
+      <span
+        ><img
+          src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=2000"
+          alt="Landscape"
+          width="450px"
+          height="350px"
+      /></span>
+    </div>
+    <span>
+      <img
+        src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=2000"
+        alt="Landscape"
+        width="450px"
+        height="350px"
+      />
+    </span>
+    <span class="hello">
+      <img
+        src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=2000"
+        alt="Landscape"
+        width="450px"
+        height="350px"
+      />
+    </span>
+    <span>
+      <img
+        src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=2000"
+        alt="Landscape"
+        width="450px"
+        height="350px"
+      />
+    </span>
+
+    <script>
+      var title =
+        document.getElementsByTagName("title")[0].firstChild.nodeValue;
+      console.log(title);
+
+      var menuImg = document.getElementById("menu").children[1].children[0];
+      console.log(menuImg);
+
+      menuImg.src = "https://thumbs.dreamstime.com/b/incredibly-beautiful-sunset-sun-lake-sunrise-landscape-panorama-nature-sky-amazing-colorful-clouds-fantasy-design-115177001.jpg";
+
+      var menuImg2 = document.getElementById("menu").nextElementSibling.children[0];
+      console.log(menuImg2);
+
+      menuImg2.src = "https://img.freepik.com/free-photo/beautiful-view-greenery-bridge-forest-perfect-background_181624-17827.jpg?w=2000";
+
+      var menuImg3 = document.getElementsByClassName("hello")[0];
+      console.log(menuImg3);
+
+      console.log(document.getElementById("menu").children);
+    </script>
+  </body>
+</html>

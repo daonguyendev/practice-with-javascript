@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM</title>
+</head>
+<body>
+    <!-- p#fullName{Nguyen Van Teo} -->
+    <p id="fullName">Nguyen Van Teo</p>
+
+    <script>
+        document.write("Hello C07<br><br>");
+        console.log("Hello C07");
+
+        var pTag = document.getElementById("fullName");
+        document.write(pTag.innerHTML + "<br><br>");
+
+        pTag.innerHTML = "Tran Van Ty";
+        document.write(pTag.innerHTML);
+    </script>
+</body>
+</html>

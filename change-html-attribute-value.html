@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS DOM</title>
+  </head>
+  <body>
+    <!-- p#fullName{Teo} -->
+    <p id="fullName">Teo</p>
+
+    <img
+      src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=2000"
+      alt="Landscape"
+      width="450px"
+      height="350px"
+    />
+    <button onclick="changeImg();">Change Image</button>
+    <button onclick="backToOriginImg();">Back To Origin Image</button>
+    <br><br>
+
+    <script>
+      var pTag = document.getElementById("fullName");
+      document.write(pTag.id + "<br><br>");
+
+      pTag.id = "lastName";
+      document.write(pTag.id + "<br><br>");
+
+      function changeImg() {
+        var imgTag = document.getElementsByTagName("img")[0];
+        console.log(imgTag);
+
+        imgTag.src =
+          "https://thumbs.dreamstime.com/b/incredibly-beautiful-sunset-sun-lake-sunrise-landscape-panorama-nature-sky-amazing-colorful-clouds-fantasy-design-115177001.jpg";
+      }
+
+      function backToOriginImg() {
+        var imgTag = document.getElementsByTagName("img")[0];
+        console.log(imgTag);
+
+        imgTag.src =
+          "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=2000";
+      }
+    </script>
+  </body>
+</html>

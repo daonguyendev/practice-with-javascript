@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change CSS</title>
+  </head>
+  <body>
+    <!-- p#fullName{Hello C07} -->
+    <p id="greeting">Hello C07</p>
+
+    <button onclick="hiddenText()">Hidden Text</button>
+    <button onclick="visibleText()">Visible Text</button>
+    <button onclick="makeColor()">Make Color</button>
+    <button onclick="clearColor()">Clear Color</button>
+
+    <script>
+        function hiddenText() {
+            document.getElementById("greeting").style.visibility = "hidden";
+        }
+
+        function visibleText() {
+            document.getElementById("greeting").style.visibility = "visible";
+        }
+
+        function makeColor() {
+            document.getElementById("greeting").style.color = "white";
+            document.getElementById("greeting").style.backgroundColor = "red";
+        }
+
+        
+        function clearColor() {
+            document.getElementById("greeting").style.color = "black";
+            document.getElementById("greeting").style.backgroundColor = "white";
+        }
+    </script>
+  </body>
+</html>

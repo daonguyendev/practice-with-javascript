@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 01</title>
+    <link type="text/css" rel="stylesheet" href="./css/menu.css" />
+    <link type="text/css" rel="stylesheet" href="./css/modal.css" />
+  </head>
+  <body>
+    <ul id="menu">
+      <li
+        class="menu-item active"
+        onmouseover="hoverMenuItem(this)"
+        onmouseout="outMenuItem(this)"
+      >
+        Trang chủ
+      </li>
+      <li
+        class="menu-item"
+        onmouseover="hoverMenuItem(this)"
+        onmouseout="outMenuItem(this)"
+      >
+        Giới thiệu
+      </li>
+      <li
+        class="menu-item"
+        onmouseover="hoverMenuItem(this)"
+        onmouseout="outMenuItem(this)"
+      >
+        Bài viết
+      </li>
+      <li
+        class="menu-item"
+        onmouseover="hoverMenuItem(this)"
+        onmouseout="outMenuItem(this)"
+      >
+        Liên lạc
+      </li>
+      <span class="search-form">
+        <input
+          class="search-input"
+          placeholder="Tìm kiếm"
+          type="text"
+          name="search"
+          id="search"
+        />
+      </span>
+    </ul>
+    <main>
+      <h1>Ví dụ thao tác JavaScript với HTML, CSS</h1>
+      <p class="content">Nội dung đang cập nhật</p>
+      <button
+        id="loginBtn"
+        type="button"
+        onclick="document.getElementById('loginModal').style.display='block'"
+      >
+        Đăng nhập
+      </button>
+
+      <div id="loginModal" class="modal">
+        <form class="modal-content animate">
+          <div class="imgcontainer">
+            <span
+              onclick="document.getElementById('loginModal').style.display='none'"
+              class="close"
+              title="Close Modal"
+              >&times;</span
+            >
+            <img
+              src="https://www.w3schools.com/howto/img_avatar2.png"
+              alt="Avatar"
+              class="avatar"
+            />
+          </div>
+
+          <div class="container">
+            <label for="uname"><b>Tài khoản</b></label>
+            <input
+              type="text"
+              placeholder="Nhập tài khoản"
+              name="uname"
+              required
+            />
+
+            <label for="psw"><b>Mật khẩu</b></label>
+            <input
+              type="password"
+              placeholder="Nhập mật khẩu"
+              name="psw"
+              required
+            />
+
+            <button
+              id="loginModalBtn"
+              onclick="login()"
+            >
+              Đăng nhập
+            </button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember" />
+              Ghi nhớ tôi?
+            </label>
+          </div>
+
+          <div class="container" style="background-color: #f1f1f1">
+            <button
+              type="button"
+              onclick="document.getElementById('loginModal').style.display='none'"
+              class="cancelbtn"
+            >
+              Hủy
+            </button>
+            <span class="psw">Quên <a href="#">mật khẩu?</a></span>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      function hoverMenuItem(currentTag) {
+        currentTag.style.backgroundColor = "#f2f2f2";
+        currentTag.style.color = "black";
+      }
+
+      function outMenuItem(currentTag) {
+        var activeClass = currentTag.classList[1];
+        if (activeClass === "active") {
+          currentTag.style.backgroundColor = "#1fc61f";
+        } else {
+          currentTag.style.backgroundColor = "black";
+        }
+        currentTag.style.color = "white";
+
+        // currentTag.style.backgroundColor = "";
+        // currentTag.style.color = "";
+      }
+
+      var loginModalBtn = document.getElementById("loginModalBtn");
+      loginModalBtn.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("loginModalBtn").click();
+        }
+      });
+
+      function test() {
+        console.log("hello");
+      }
+
+      function login() {
+        var username = document.getElementsByName("uname")[0].value;
+        var password = document.getElementsByName("psw")[0].value;
+        if (username === "admin" && password === "123456") {
+          alert("Đăng nhập thành công!");
+          document.getElementById("loginModal").style.display = "none";
+        } else {
+          alert("Sai thông tin đăng nhập! Vui lòng nhập lại!");
+        }
+        event.preventDefault();
+      }
+    </script>
+  </body>
+</html>

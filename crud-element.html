@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Element</title>
+  </head>
+  <body>
+    <div id="div1">
+      <p id="p1">This is p1</p>
+      <p id="p2">This is p2</p>
+    </div>
+    <br />
+    <button onclick="removeElementDirectly()">Remove Element Direcly</button
+    ><br /><br />
+    <button onclick="removeElementByParent()">Remove Element By Parent</button>
+
+    <script>
+      //Create new p tag which is child of div#div1 and sibling of p#p2
+      var pTag3 = document.createElement("p");
+      var pTag3Text = document.createTextNode("This is p3");
+      pTag3.appendChild(pTag3Text);
+      console.log(pTag3);
+
+      var divTag = document.getElementById("div1");
+      divTag.appendChild(pTag3);
+
+      //Create new p tag which is child of span#span1 and span is sibling of p#p3
+      var pTag4 = document.createElement("p");
+      var pTag4Text = document.createTextNode("This is p4");
+      pTag4.setAttribute("id", "p4");
+
+      var spanTag = document.createElement("span");
+      spanTag.setAttribute("id", "span1");
+      var spanTag1Text = document.createTextNode("This is span 1");
+
+      spanTag.appendChild(spanTag1Text);
+      console.log(spanTag);
+      divTag.appendChild(spanTag);
+
+      console.log(divTag);
+
+      var spanTag2 = document.createElement("span");
+      var spanTag2Text = document.createTextNode("This is span 2");
+      spanTag2.appendChild(spanTag2Text);
+      spanTag2.setAttribute("id", "span2");
+
+      var pTag2 = document.getElementById("p2");
+
+      divTag.insertBefore(spanTag2, pTag2);
+
+      function removeElementDirectly() {
+        var pTag1 = document.getElementById("p1");
+        pTag1.remove();
+      }
+
+      function removeElementByParent() {
+        var divTag1 = document.getElementById("div1");
+        // var pTag2 = document.getElementById("p2");
+        // divTag1.removeChild(pTag2);
+
+        divTag1.removeChild(p2);
+      }
+
+      var divTag2 = document.createElement("div");
+      var divTag2Text = document.createTextNode("This is div 2");
+      divTag2.appendChild(divTag2Text);
+      divTag2.setAttribute("id", "div2");
+
+      var spanTag1 = document.getElementById("span1");
+      divTag.replaceChild(divTag2, spanTag1);
+    </script>
+  </body>
+</html>
